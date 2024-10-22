@@ -1,13 +1,518 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Kanit", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*
+
+GENERICS
+
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  background-color: black;
+  height: 60px;
+}
+
+.logo__icon {
+  color: #2552e3;
+  font-size: 48px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.logo__icon:hover {
+  color: white;
+  transition: all 300ms ease;
+}
+
+/*
+
+NAV
+
+*/
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4px 0;
+}
+
+.nav__links {
+  display: flex;
+}
+
+.nav__link {
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: 24px;
+  color: #2552e3;
+  transition: all 300ms ease;
+}
+
+.nav__link:hover {
+  color: white;
+  transition: all 300ms ease;
+}
+
+/*
+
+LANDING
+
+*/
+
+#landing {
+  max-height: 83.8vh;
+}
+
+header {
+  background-color: #141414;
+  padding: 60px;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header__container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header__row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-size: 48px;
+  color: white;
+}
+
+h1 {
+  font-size: 108px;
+  background: radial-gradient(circle, #2552e3, white);
+  background-clip: text;
+  color: transparent;
+  animation: movie 5s linear infinite;
+  background-size: 200% 20%;
+}
+
+@keyframes movie {
+  0% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 450% 0%;
+  }
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 42px 0 32px 0;
+}
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  display: inline-flex;
+  font-family: "Kanit", sans-serif;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #2552e3;
+  border: transparent;
+  border-radius: 1000px;
+  box-shadow: 0px 0px 24px #2552e3;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+
+.button:hover {
+  color: white;
+  box-shadow: none;
+  box-shadow: 0 0 60px #2552e3;
+}
+
+.header__img {
+  width: 100%;
+  max-width: 1050px;
+  margin-top: 26px;
+}
+
+/* 
+
+MOVIES
+
+*/
+
+#movie__page {
+  min-height: 83.8vh;
+  background-color: #141414;
+}
+
+.movie__page--wrapper {
+  width: 100%;
+}
+
+.movie__page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.movie__page--title {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 700;
+  margin: 24px;
+}
+
+.movies__form {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.movies__input {
+  font-size: 24px;
+  line-height: 32px;
+  border-radius: 50px;
+  background-color: #313133;
+  border-color: transparent;
+  width: 500px;
+  padding: 12px;
+  transition: all 300ms ease;
+}
+
+.movies__btn--wrapper {
+  position: absolute;
+  border-radius: 50px;
+  width: 76px;
+  font-size: 32px;
+  line-height: 25px;
+  background: #2552e3;
+  margin-right: 10px;
+  border-color: transparent;
+  transition: all 300ms ease;
+}
+
+.movies__btn--wrapper:hover,
+.movies__option:hover,
+.movies__input:hover,
+.back__btn:hover {
+  box-shadow: 0 0 30px #2552e3;
+  transition: all 300ms ease;
+  color: white;
+}
+
+.movies__btn {
+  padding: 6px;
+}
+
+.movies__option {
+  padding: 8px;
+  margin-top: 24px;
+  border-radius: 8px;
+  border-color: transparent;
+  color: black;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #2552e3;
+  transition: all 300ms ease;
+}
+
+.movies__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.movies__card--wrapper {
+  width: 33%;
+}
+
+.movies__card {
+  padding: 18px 18px;
+}
+
+.movies__poster {
+  width: 100%;
+}
+
+.movies__title,
+.movies__year {
+  width: 100%;
+  color: white;
+}
+
+/* 
+
+MOVIEINFO
+
+*/
+
+#movieinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 60px;
+  width: 100%;
+  min-height: 83.8vh;
+  background-color: #141414;
+}
+
+.back {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.back__btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  overflow: hidden;
+  position: relative;
+  padding: 0 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border-color: transparent;
+  background-color: #2552e3;
+  height: 48px;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  transition: all 300ms ease;
+}
+
+.movieinfo__wrapper {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-bottom: 56px;
+  border-radius: 8px;
+  border-width: 4px;
+  border-style: solid;
+  width: 100%;
+  max-width: 1800px;
+  border-color: white;
+}
+
+.movieinfo__poster--wrapper {
+  display: flex;
+  width: 40%;
+}
+
+.movieinfo__poster {
+  width: 100%;
+  padding: 15%;
+}
+
+.movieinfo__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  padding-right: 15%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: rgba(255, 255, 255, 0.685);
+}
+
+.movieinfo__title {
+  margin-bottom: 28px;
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.movieinfor__rating {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.movieinfo__plot {
+  margin-top: 8px;
+}
+
+/*
+
+FOOTER
+
+*/
+
+#footer {
+  background-color: black;
+  margin-top: auto;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 48px 0;
+}
+
+.footer__copyright {
+  font-size: 20px;
+  color: white;
+}
+
+.footer__github {
+  font-size: 32px;
+}
+
+.footer__github--icon {
+  color: white;
+  padding: 0 12px;
+  transition: all 300ms;
+}
+
+.footer__github--icon:hover {
+  color: #2552e3;
+  transition: all 300ms;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+  h1 {
+    text-align: center;
+    font-size: 90px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  .header__container {
+    padding: 20% 0;
+  }
+  .movieinfo__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .movieinfo__poster--wrapper {
+    width: 100%;
+  }
+  .movieinfo__poster {
+    padding: 10% 10% 0 10%;
+  }
+  .movieinfo__description {
+    width: 100%;
+    padding: 5% 10% 10% 10%;
+  }
+}
+
+/* PHONES */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .header__img {
+    padding: 20% 0 0 0;
+  }
+  .movies__form {
+    padding: 0 10%;
+  }
+  .movies__card--wrapper {
+    width: 50%;
+  }
+  .footer__copyright {
+    display: none;
+  }
+}
+
+/* LOADER */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.bouncing-dots {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
