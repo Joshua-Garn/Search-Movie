@@ -1,10 +1,8 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -54,7 +52,6 @@ function Movies() {
 
   return (
     <>
-      <Nav />
       <section id="movie__page">
         <div className="movie__page--wrapper">
           <div className="movie__page">
@@ -113,7 +110,6 @@ function Movies() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

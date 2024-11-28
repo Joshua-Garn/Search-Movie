@@ -15,7 +15,7 @@ function Footer() {
             </p>
             <ul className="footer__github">
             <a
-                href="www.linkedin.com/in/joshua-garn-42b39332b"
+                href="https://www.linkedin.com/in/joshua-garn-42b39332b/"
                 target="_blank"
               >
                 <FontAwesomeIcon icon="fa-brands fa-linkedin" className="footer__github--icon" />

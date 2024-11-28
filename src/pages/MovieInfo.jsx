@@ -3,8 +3,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 
 function MovieInfo() {
   const { id } = useParams();
@@ -26,7 +24,6 @@ function MovieInfo() {
 
   return (
     <>
-      <Nav />
       <section id="movieinfo">
         <div>
           {loading ? (
@@ -41,7 +38,10 @@ function MovieInfo() {
             <>
               <div className="back">
                 <Link to="/movies">
-                <FontAwesomeIcon icon="fa-solid fa-arrow-left" className="back__btn"/>
+                  <FontAwesomeIcon
+                    icon="fa-solid fa-arrow-left"
+                    className="back__btn"
+                  />
                 </Link>
               </div>
               <div className="movieinfo__wrapper">
@@ -80,7 +80,6 @@ function MovieInfo() {
           )}
         </div>
       </section>
-      <Footer />
     </>
   );
 }

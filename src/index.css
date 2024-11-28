@@ -7,6 +7,10 @@
   font-family: "Kanit", sans-serif;
 }
 
+.App {
+  height: 100vh;
+}
+
 /*
 
 GENERICS
@@ -172,7 +176,6 @@ h1 {
 
 .header__img {
   width: 100%;
-  max-width: 1050px;
   margin-top: 26px;
 }
 
@@ -385,13 +388,16 @@ FOOTER
 
 #footer {
   background-color: black;
+  height: 160px;
   margin-top: auto;
+  position: relative;
 }
 
 .footer__container {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  z-index: 1;
 }
 
 .footer__row {
